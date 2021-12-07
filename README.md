@@ -5,6 +5,8 @@
 
 ## What is DevSecOps
 [DevSecOps](https://www.ibm.com/cloud/learn/devsecops)—short for *development, security, and operations*—automates the integration of security at every phase of the software development lifecycle, from initial design through integration, testing, deployment, and software delivery.
+![alt text]https://github.com/paulveillard/cybersecurity-devsecops/blob/main/devsecops-sdlc.webp
+
 >DevSecOps makes application and infrastructure security a shared responsibility of development, security, and IT operations teams, rather than the sole responsibility of a security silo. It enables “software, safer, sooner”—the DevSecOps motto–by automating the delivery of secure software without slowing the software development cycle.
 
 DevSecOps is important for the following key reasons: *speed, and security*
