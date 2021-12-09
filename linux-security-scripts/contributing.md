@@ -6,7 +6,7 @@ Please note we have a code of conduct, please follow it in all your interactions
 
 ## Coding Style
 
-The coding style used for this repository can be found [at this repo](https://github.com/StrangeRanger/bash-style-guide).
+The coding style used for this repository can be found [at this repo](https://github.com/paulveillard/cybersecurity-devsecops).
 
 ## Commits
 
