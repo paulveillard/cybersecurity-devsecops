@@ -40,3 +40,11 @@ Below is a list of Linux Distributions that all of the scripts have been tested 
 This repository is still a work in progress. While it has scripts that can help secure Linux, it's not nearly enough to secure the system as much as it needs to be. Below is a list of other resources that you can use to help make your system as secure as possible.
 
 - [SSH Audit](https://github.com/jtesta/ssh-audit) - SSH server & client auditing (banner, key exchange, encryption, mac, compression, compatibility, security, etc).
+
+
+## Licenses
+License
+
+[![CC0](http://i.creativecommons.org/p/zero/1.0/88x31.png)](http://creativecommons.org/publicdomain/zero/1.0/)
+
+To the extent possible under law, [Veilair](https://github.com/paulveillard/) has waived all copyright and related or neighboring rights to this work.
