@@ -87,6 +87,7 @@ There are a variety of initiatives underway to migrate security and compliance i
 * [OpenDevSecOps](https://opendevsecops.org)
 * [Rugged DevOps](http://www.ruggedsoftware.org)
 
+**[`^        back to top        ^`](#)**
 
 ## Keeping Informed
 We've discovered a treasure trove of mailing lists and newsletters where DevSecOps like us are sharing their skills and insights.  
@@ -97,6 +98,8 @@ We've discovered a treasure trove of mailing lists and newsletters where DevSecO
 * [Security Newsletter](https://securitynewsletter.co/)
 * [SRE Weekly](https://sreweekly.com/)
 
+**[`^        back to top        ^`](#)**
+
 ## Wardley Maps for Security
 One way for people to continue to evolve their capabilities and share common understanding is through the development of Wardley Maps.  We're collecting this information and providing some good examples here.
 
@@ -106,6 +109,7 @@ One way for people to continue to evolve their capabilities and share common und
 * [Security Industry Example](http://blog.gardeviance.org/2014_08_01_archive.html)
 * [SOC Value Chain & Delivery Models](http://blog.blackswansecurity.com/2016/01/soc-value-chain-delivery-models/)
 
+**[`^        back to top        ^`](#)**
 
 # Training
 DevSecOps requires an appetite for learning and agility to quickly acquire new skills.  We've collected these links to help you learn how to do DevSecOps with us.
@@ -120,6 +124,7 @@ Labs are hands-on learning opportunities to grow your skills in Dev, Sec, and Op
 * [Pentester Lab](https://pentesterlab.com/exercises/)
 * [Vulnhub](https://www.vulnhub.com/)
 
+**[`^        back to top        ^`](#)**
 
 ## Vulnerable Test Targets
 It's important to build up knowledge by learning how to break applications left vulnerable by security mistakes.  This section contains a list of vulnerable apps that can be deployed to learn what not to do.  These same apps can be made safe by remediating the intentional vulnerabilities to learn how to prevent attackers from gaining access to underlying infrastructure or data.
@@ -136,6 +141,7 @@ It's important to build up knowledge by learning how to break applications left 
 * [WebGoat.Net](https://github.com/OWASP/WebGoat.NET) (.NET)
 * [WebGoatPHP](https://github.com/OWASP/OWASPWebGoatPHP) (PHP)
 
+**[`^        back to top        ^`](#)**
 
 ## Conferences
 A body of knowledge for combining DevOps and Security has been delivered via conferences and meetups.  This is a short list of the venues that have dedicated a portion of their agenda to it.
@@ -151,6 +157,8 @@ A body of knowledge for combining DevOps and Security has been delivered via con
 * [RSA Conference](http://www.rsaconference.com)
 * [All Day DevOps](https://www.alldaydevops.com/)
 
+
+**[`^        back to top        ^`](#)**
 
 ## Podcasts
 A small collection of DevOps and Security podcasts.
