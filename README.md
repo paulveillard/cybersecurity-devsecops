@@ -171,6 +171,8 @@ A small collection of DevOps and Security podcasts.
 * [The Secure Developer](http://www.heavybit.com/library/podcasts/the-secure-developer/)
 * [Trusted Sec Podcast](https://www.trustedsec.com/podcast/)
 
+**[`^        back to top        ^`](#)**
+
 ## Books
 Books focussed around DevSecOps, bringing the security focus up front.
 
@@ -244,6 +246,8 @@ Testing is an essential element of a DevSecOps program because it helps to prepa
 * [Snyk](https://snyk.io)
 * [SourceClear](https://www.sourceclear.com)
 
+**[`^        back to top        ^`](#)**
+
 
 ## Alerting
 Once you discover something important, response time is critical and essential to the Incident Response required to remediate a security defect.  These links include some of the projects that provide for Alerting and Notifications.
@@ -264,6 +268,8 @@ There are many sources for Threat Intelligence in the world.  Some of these come
 * [Passive Total](https://www.passivetotal.org)
 * [STIX, TAXII](https://oasis-open.github.io/cti-documentation/)
 * [Threat Connect](https://threatconnect.com/)
+
+**[`^        back to top        ^`](#)**
 
 ## Attack Modeling
 DevSecOps requires a common attack modeling capability that can be done at speed and scale.  Thankfully there are efforts underway to create these useful taxonomies that help us operationalize attack modeling and defenses.
@@ -287,6 +293,7 @@ To support security as code, sensitive credentials and secrets need to be manage
 * [Transcrypt](https://github.com/elasticdog/transcrypt)
 * [Vault](https://www.hashicorp.com/blog/vault.html)
 
+**[`^        back to top        ^`](#)**
 
 ## Red Team
 These are tools that we find helpful during Red Team and War Game exercises.  The projects in this section help with reconnaissance, exploit development, and other activities common within the Kill Chain.
@@ -318,6 +325,9 @@ One of the greatest changes you can make in your organization is boundaryless co
 * [Riot](https://riot.im/)
 * [Slack](https://slack.com)
 
+
+
+**[`^        back to top        ^`](#)**
 
 ## License
 MIT License & [cc](https://creativecommons.org/licenses/by/4.0/) license
