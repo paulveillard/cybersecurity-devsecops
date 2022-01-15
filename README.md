@@ -3,7 +3,7 @@
 > A collection of awesome software, libraries, documents, books, resources and cool stuff about devsecops in Cybersecurity.
 > Thanks to all contributors, you're awesome and wouldn't be possible without you! Our goal is to build a categorized community-driven collection of very well-known resources.
 
-## What is DevSecOps
+## `What is DevSecOps`
 [DevSecOps](https://www.ibm.com/cloud/learn/devsecops)—short for *development, security, and operations*—automates the integration of security at every phase of the software development lifecycle, from initial design through integration, testing, deployment, and software delivery.
 
 ![devsecops sdlc](https://github.com/paulveillard/cybersecurity-devsecops/blob/main/devsecops-sdlc.png)
@@ -17,7 +17,7 @@ DevSecOps is important for the following key reasons: *speed, and security*
 * Automation compatible with modern development
 * A repeatable and adaptive process
 
-## Contents
+## `Table of Contents`
 - [Introduction](#introduction)
   - [Manifesto](#manifesto)
   - [Guidelines](#guidelines)
@@ -48,15 +48,15 @@ DevSecOps is important for the following key reasons: *speed, and security*
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 
-# Introduction
+# `Introduction`
 > “The purpose and intent of DevSecOps is to build on the mindset that everyone is responsible for security with the goal of safely distributing security decisions at speed and scale to those who hold the highest level of context without sacrificing the safety required,” describes Shannon Lietz, co-author of the “DevSecOps Manifesto.”  
 * This collection has been pulled together and includes: Podcasts, Videos, Presentations, and other Media to help you learn more about DevSecOps, SecDevOps, DevOpsSec, and/or DevOps + Security.
 
-## Manifesto
+## `Manifesto`
 * [DevSecOps Manifesto](https://www.devsecops.org/)
 * [Best practices for DevSecOps](https://www.ibm.com/cloud/learn/devsecops#toc-best-pract-yeQPSJ8K)
 
-## Guidelines
+## `Guidelines`
 While we're not into the paper-way of doing things, sharing sound advice and good recommendations can make software stronger.  We aim to make these guidelines better through code.
 
 * [Introduction to DevSecOps - DZone Refcard](https://dzone.com/refcardz/introduction-to-devsecops)
@@ -67,7 +67,7 @@ While we're not into the paper-way of doing things, sharing sound advice and goo
 * [DevSecOps Hub](https://snyk.io/devsecops/)
 
 
-## Presentations
+## `Presentations`
 Many talks are now targeting the change of adding Security into the DevOps environment.  We've added some of the most notable ones here.    
 
 * [DevSecOps: Taking a DevOps Approach to Security](https://www.slideshare.net/AlertLogic/alert-logic-and-chef-dev-ops-webinar)
