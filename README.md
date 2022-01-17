@@ -143,7 +143,7 @@ It's important to build up knowledge by learning how to break applications left 
 
 **[`^        back to top        ^`](#)**
 
-## Conferences
+##  `Conferences `
 A body of knowledge for combining DevOps and Security has been delivered via conferences and meetups.  This is a short list of the venues that have dedicated a portion of their agenda to it.
 
 * [AWS re:Inforce](https://reinforce.awsevents.com/)
@@ -160,7 +160,7 @@ A body of knowledge for combining DevOps and Security has been delivered via con
 
 **[`^        back to top        ^`](#)**
 
-## Podcasts
+##  `Podcasts `
 A small collection of DevOps and Security podcasts.
 
 * [Arrested DevOps](https://www.arresteddevops.com/)
@@ -181,7 +181,7 @@ A small collection of DevOps and Security podcasts.
 
 **[`^        back to top        ^`](#)**
 
-## Books
+##  `Books `
 Books focussed around DevSecOps, bringing the security focus up front.
 
 * [DevOpsSec](http://www.oreilly.com/webops-perf/free/devopssec.csp)
@@ -190,7 +190,7 @@ Books focussed around DevSecOps, bringing the security focus up front.
 * [Securing DevOps](https://securing-devops.com/book)
 * [The DevOps Handbook (Section VI)](https://www.oreilly.com/library/view/the-devops-handbook/9781457191381/)
 
-# Tools
+#  `Tools `
 This collection of tools are useful in establishing a DevSecOps platform.  We have divided the tools into several categories that help with the different divisions of DevSecOps.
 
 ## Dashboards
