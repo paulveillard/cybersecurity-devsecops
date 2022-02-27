@@ -1,0 +1,18 @@
+---
+- name: Ensure dependencies are installed.
+  apt:
+    name:
+      - apt-transport-https
+      - gnupg2
+    state: present
+
+- name: Add Elasticsearch apt key.
+  apt_key:
+    url: https://artifacts.elastic.co/GPG-KEY-elasticsearch
+    state: present
+
+- name: Add Kibana repository.
+  apt_repository:
+    repo: 'deb https://artifacts.elastic.co/packages/{{ kibana_version }}/apt stable main'
+    state: present
+    update_cache: true

@@ -1,0 +1,13 @@
+---
+
+# See https://github.com/geerlingguy/ansible-role-jenkins/issues/181
+- name: Fix a defect to disable setup wizard
+  jenkins_script:
+    script: |
+      import static jenkins.model.Jenkins.instance as jenkins
+      import jenkins.install.InstallState
+      if (!jenkins.installState.isSetupComplete()) {
+        InstallState.INITIAL_SETUP_COMPLETED.initializeState()
+      }
+    user: "{{ jenkins_admin_username }}"
+    password: "{{ jenkins_admin_password }}"
