@@ -1,0 +1,9 @@
+---
+
+- name: Install Security Tools
+  apt:
+    name:
+      - nikto
+      - nmap
+      - sqlmap
+    state: present

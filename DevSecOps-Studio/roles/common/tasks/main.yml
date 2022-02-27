@@ -1,0 +1,20 @@
+---
+- name: Install curl, locales and apt-transport-https
+  apt:
+    name:
+      - curl
+      - locales
+      - apt-transport-https
+      - sshpass
+      - apparmor-utils
+    state: present
+    update_cache: yes
+
+# See https://www.pixelflush.com/blog/2013/03/29/fix-locale-setting-on-ubuntu-ec2-instances/
+- name: Configure Locale as en_US.UTF-8
+  locale_gen:
+    name: en_US.UTF-8
+    state: present
+
+- name: Add /etc/hosts entries in DevSecOps-Box
+  include_tasks: hosts_entry.yml
