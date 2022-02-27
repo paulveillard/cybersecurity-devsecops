@@ -1,0 +1,19 @@
+---
+
+- name: Install ELK stack
+  hosts: all
+  become: yes
+
+  vars:
+    - elasticsearch_network_host: localhost
+
+    # To fix under molecule runner "Failed to import the required Python library (setuptools) on instance's Python /usr/bin/python. Please read module documentation and install in the appropriate location. If the required library is installed, but Ansible is using the wrong Python interpreter, please consult the documentation on ansible_python_interpreter"
+
+    ansible_python_interpreter: /usr/bin/python3
+
+  roles:
+    - common
+    - geerlingguy.nginx
+    - geerlingguy.elasticsearch
+    - geerlingguy.kibana
+    - geerlingguy.logstash

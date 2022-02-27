@@ -1,0 +1,64 @@
+---
+
+- name: Setup DevSecOps Environment
+  hosts: all
+  become: yes
+
+  vars:
+
+    # host entries wont work in docker
+    # see https://stackoverflow.com/questions/28327458/how-to-add-my-containers-hostname-to-etc-hosts
+    # MOLECULE TESTS ONLY
+    add_host_entries: "false"
+
+    # To fix under molecule runner "Failed to import the required Python library (setuptools) on instance's Python /usr/bin/python. Please read module documentation and install in the appropriate location. If the required library is installed, but Ansible is using the wrong Python interpreter, please consult the documentation on ansible_python_interpreter"
+
+    ansible_python_interpreter: /usr/bin/python3
+
+    # Inspec
+    inspec_version: "4.18.104"
+
+    # Docker Community Edition
+    docker_edition: 'ce'
+    docker_package: "docker-{{ docker_edition }}"
+    docker_package_state: present
+
+    # Docker compose
+    docker_install_compose: true
+    docker_compose_version: "1.25.4"
+    docker_compose_path: /usr/local/bin/docker-compose
+
+    docker_apt_release_channel: stable
+    docker_apt_repository: "deb https://download.docker.com/linux/{{ ansible_distribution|lower }} {{ ansible_distribution_release }} {{ docker_apt_release_channel }}"
+
+    # Packer
+    packer_version: "1.5.5"
+    packer_arch: "amd64"
+    packer_bin_path: /usr/local/bin
+
+    # Terraform
+    terraform_version: "0.12.24"
+    terraform_arch: "amd64"
+    terraform_bin_path: /usr/local/bin
+
+    # Install pip3 version
+    pip_package: python3-pip
+    pip_executable: pip3
+    pip_install_packages:
+      - name: awscli
+        version: 1.18.39
+      # - name: awsebcli
+      #   version: 3.17.1
+      - name: ansible
+        version: 2.9.6
+      - name: ansible-lint
+        version: 4.2.0
+
+  roles:
+    - common
+    - geerlingguy.pip
+    - geerlingguy.docker
+    - geerlingguy.packer
+    - secfigo.terraform
+    - secfigo.inspec
+    - devsecops

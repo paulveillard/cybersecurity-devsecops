@@ -1,0 +1,51 @@
+---
+- hosts: all
+  gather_facts: yes
+  become: yes
+
+  vars:
+    # To fix under molecule runner "Failed to import the required Python library (setuptools) on instance's Python /usr/bin/python. Please read module documentation and install in the appropriate location. If the required library is installed, but Ansible is using the wrong Python interpreter, please consult the documentation on ansible_python_interpreter"
+
+    ansible_python_interpreter: /usr/bin/python3
+
+    java_packages:
+      - java-1.8.0-openjdk
+
+    #Jenkins
+    jenkins_admin_username: vagrant
+    jenkins_admin_password: vagrant
+    jenkins_plugins_install_dependencies: yes
+    jenkins_java_options: "-Djenkins.install.runSetupWizard=false"
+    jenkins_plugins:
+      - git # Installs Credentials and SSH credentials plugins
+      - sonar
+      - ant
+      - gradle
+      - cloudbees-folder
+      - ssh
+      - ws-cleanup
+      - build-timeout
+      - timestamper
+      - credentials-binding
+      - role-strategy
+      - antisamy-markup-formatter
+      - ansicolor
+      - matrix-auth
+      - workflow-aggregator
+      - extended-read-permission
+      - ssh-slaves
+      - email-ext
+      - ansible
+
+  roles:
+    - common # need curl for rvm_io.ruby
+    - geerlingguy.docker
+    - geerlingguy.java
+    - geerlingguy.jenkins
+    - jenkins # Docker settings for jenkins
+    - python
+    - cli-tools
+    - geerlingguy.packer
+    - secfigo.terraform
+    - secfigo.inspec
+    # - selenium

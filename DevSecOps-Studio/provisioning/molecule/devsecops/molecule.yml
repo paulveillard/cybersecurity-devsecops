@@ -1,0 +1,54 @@
+---
+dependency:
+  name: galaxy
+driver:
+  name: docker
+lint:
+  name: yamllint
+  enabled: False 
+  options:
+    config-file: resources/.yamllint
+platforms:
+  - name: instance
+    image: "geerlingguy/docker-${MOLECULE_DISTRO:-ubuntu1804}-ansible:latest"
+    command: ${MOLECULE_DOCKER_COMMAND:-""}
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+    privileged: true
+    pre_build_image: true
+    hostname: "gitlab.local"
+provisioner:
+  name: ansible
+  playbooks:
+    create: create.yml
+    destroy: destroy.yml
+  env:
+    ANSIBLE_ROLES_PATH: ../../roles/
+  lint:
+    name: ansible-lint
+    enabled: True
+    options:
+      exclude:
+        - roles/geerlingguy.docker/tasks/setup-Debian.yml
+      x: 
+        - 204
+scenario:
+  name: devsecops
+  test_sequence:
+    - lint
+    - destroy
+    - dependency
+    - syntax
+    - create
+    - prepare
+    - converge
+    # - idempotence
+    - side_effect 
+    - verify
+    - destroy
+verifier:
+  name: testinfra
+  options:
+    p: no:warnings
+  lint:
+    name: flake8

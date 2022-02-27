@@ -1,0 +1,39 @@
+---
+
+- name: Configure gitlab on ubuntu server
+  hosts: all
+  become: true
+
+  vars:
+    # To fix under molecule runner "Failed to import the required Python library (setuptools) on instance's Python /usr/bin/python. Please read module documentation and install in the appropriate location. If the required library is installed, but Ansible is using the wrong Python interpreter, please consult the documentation on ansible_python_interpreter"
+
+    ansible_python_interpreter: /usr/bin/python3
+
+    gitlab_restart_handler_failed_when: false
+    # gitlab_external_url: https://gitlab.local/
+    # gitlab_in_docker: true
+
+    # host entries won't work in docker
+    # see https://stackoverflow.com/questions/28327458/how-to-add-my-containers-hostname-to-etc-hosts
+    add_host_entries: false
+
+  pre_tasks:
+    - name: Update apt cache.
+      apt: update_cache=yes cache_valid_time=600
+      when: ansible_os_family == 'Debian'
+      changed_when: false
+
+    - name: Remove the .dockerenv file so GitLab Omnibus doesn't get confused.
+      file:
+        path: /.dockerenv
+        state: absent
+
+    - name: Install GitLab dependencies (Debian).
+      apt:
+        name: gnupg2
+        state: present
+      when: ansible_os_family == 'Debian'
+
+  roles:
+    - common
+    - gitlab
