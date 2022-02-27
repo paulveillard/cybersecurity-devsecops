@@ -1,0 +1,14 @@
+---
+
+- name: Install gitlab server
+  hosts: all
+  become: yes
+
+  vars:
+    # host entries won't work in docker
+    # see https://stackoverflow.com/questions/28327458/how-to-add-my-containers-hostname-to-etc-hosts
+    add_host_entries: true
+
+  roles:
+    - common
+    - gitlab
