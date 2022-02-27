@@ -1,0 +1,56 @@
+---
+- name: Define ruby_build_packages.
+  set_fact:
+    ruby_build_packages: "{{ __ruby_build_packages }}"
+  when: ruby_build_packages is not defined
+
+- name: Install packages required to build ruby.
+  yum:
+    name: "{{ ruby_build_packages }}"
+    state: present
+  when: ansible_os_family == 'RedHat'
+
+- name: Update apt cache (Debian).
+  apt: update_cache=true cache_valid_time=86400
+  when: ansible_os_family == 'Debian'
+
+- name: Install packages required to build ruby (Debian).
+  apt:
+    name: "{{ ruby_build_packages }}"
+    state: present
+  when: ansible_os_family == 'Debian'
+
+- name: Download ruby.
+  get_url:
+    url: "{{ ruby_download_url }}"
+    dest: "{{ workspace }}/ruby-{{ ruby_version }}.tar.gz"
+
+- name: Extract ruby.
+  unarchive:
+    src: "{{ workspace }}/ruby-{{ ruby_version }}.tar.gz"
+    dest: "{{ workspace }}/"
+    copy: false
+
+- name: Build ruby.
+  command: >
+    {{ item }}
+    chdir={{ workspace }}/ruby-{{ ruby_version }}
+    creates=/usr/local/bin/ruby
+  with_items:
+    - "{{ ruby_source_configure_command }}"
+    - make
+    - make install
+
+- name: Add ruby symlinks.
+  file:
+    src: "/usr/local/bin/{{ item }}"
+    dest: "/usr/bin/{{ item }}"
+    state: link
+    force: true
+  with_items:
+    - erb
+    - gem
+    - irb
+    - rake
+    - rdoc
+    - ruby

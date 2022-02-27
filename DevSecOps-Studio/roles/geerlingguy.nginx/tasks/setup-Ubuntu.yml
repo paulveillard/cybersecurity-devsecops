@@ -1,0 +1,15 @@
+---
+- name: Add PPA for Nginx.
+  apt_repository:
+    repo: 'ppa:nginx/{{ nginx_ppa_version }}'
+    state: present
+    update_cache: true
+  register: nginx_ppa_added
+  when: nginx_ppa_use | bool
+
+- name: Ensure nginx will reinstall if the PPA was just added.
+  apt:
+    name: nginx
+    state: absent
+  when: nginx_ppa_added.changed
+  tags: ['skip_ansible_lint']
