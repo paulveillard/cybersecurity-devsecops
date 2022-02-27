@@ -1,0 +1,91 @@
+---
+
+- name: Check if GitLab Runner /etc directory is created
+  stat: path=/etc/gitlab-runner
+  register: gitlab_config_dir
+
+- name: Check if GitLab Runner Configuragion file is present
+  stat: path=/etc/gitlab-runner
+  register: gitlab_config_file
+
+- name: Check if GitLab Runner is already installed.
+  stat: path=/usr/bin/gitlab-runner
+  register: gitlab_runner_file
+
+- name: Download GitLab Runner repository installation script.
+  get_url:
+    url: "{{ gitlab_runner_repository_installation_script_url }}"
+    dest: /tmp/gitlab_runner_install_repository.sh
+    validate_certs: yes
+  when: not gitlab_runner_file.stat.exists
+
+- name: Install GitLab Runner repository
+  command: bash /tmp/gitlab_runner_install_repository.sh
+  when: not gitlab_runner_file.stat.exists
+
+- name: Install GitLab Runner dependencies
+  apt:
+    name:
+      - git
+      - build-essential
+      - debian-archive-keyring
+      - apt-transport-https
+      - ca-certificates
+    state: present
+
+- name: Install GitLab Runner
+  apt:
+    name: gitlab-runner
+    state: present
+
+- name: Create required directory
+  file:
+    path: "{{ gitlab_runner_persistent_dir }}"
+    state: directory
+    owner: gitlab-runner
+    group: gitlab-runner
+    mode: 0775
+    recurse: true
+  when: not gitlab_config_dir.stat.exists
+
+- name: Copy config.toml to /etc/gitlab-runner
+  template:
+    src: config.toml.j2
+    dest: /etc/gitlab-runner/config.toml
+    owner: root
+    group: root
+    mode: 0644
+  when: not gitlab_config_file.stat.exists
+
+- name: Install Self-Signed cert on system
+  include_tasks: custom-certs.yml
+  when: gitlab_runner_connect_enable
+
+- name: Wait untils Gitlab web API is available
+  uri:
+    url: '{{ gitlab_runner_coordinator_url }}'
+    method: GET
+    validate_certs: no
+  register: result
+  until: result.status != 302
+  retries: 12
+  delay: 5
+  when: gitlab_runner_connect_enable
+
+- name: Check whether /etc/hosts contains "10.0.1.15 gitlab.local"
+  command: awk /gitlab.local$/ /etc/hosts
+  register: hosts_content
+  changed_when: False
+
+  # https://gitlab.com/gitlab-org/gitlab-runner/issues/1490
+- name: Add gitlab.local ip address into /etc/hosts
+  shell: echo "10.0.1.15 gitlab.local" >> /etc/hosts
+  when: not (hosts_content.stdout is match("10.0.1.15 gitlab.local"))
+
+- name: Register GitLab Runner
+  include_tasks: register-runner.yml
+  when: gitlab_runner_connect_enable
+
+- name: Setup docker with self signed ssl
+  include_tasks: docker.yml
+  when: docker_package_state == "present"

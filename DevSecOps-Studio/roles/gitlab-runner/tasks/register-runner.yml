@@ -1,0 +1,47 @@
+---
+
+- name: List configured runners
+  command: gitlab-runner list
+  register: configured_runners
+  changed_when: false
+  when: gitlab_runner_connect_enable
+
+- name: Uninstall existing gitlab-runner shell runner
+  command: gitlab-runner unregister -n gitlab-runner
+  when: configured_runners.stderr.find("=shell") != -1
+
+- name: Uninstall existing gitlab-runner docker runner
+  command: gitlab-runner unregister -n docker-runner
+  when: configured_runners.stderr.find("=docker") != -1
+
+- name: List configured runners
+  command: gitlab-runner list
+  register: configured_runners
+  changed_when: false
+  when: gitlab_runner_connect_enable
+
+- name: Upload gitlab shell runner register script to /tmp
+  template:
+    src: "{{ gitlab_runner_shell_register_script }}"
+    dest: "/tmp/{{ gitlab_runner_shell_register_script }}"
+    owner: root
+    group: root
+    mode: 0754
+  when: configured_runners.stderr.find("=shell") == -1
+
+- name: Upload gitlab docker runner register script to /tmp
+  template:
+    src: "{{ gitlab_runner_docker_register_script }}"
+    dest: "/tmp/{{ gitlab_runner_docker_register_script }}"
+    owner: root
+    group: root
+    mode: 0754
+  when: configured_runners.stderr.find("=docker") == -1
+
+- name: Register gitlab shell runner
+  command: bash "/tmp/{{ gitlab_runner_shell_register_script }}"
+  when:  gitlab_runner_connect_enable and configured_runners.stderr.find("=shell") == -1
+
+- name: Register gitlab docker runner
+  command: bash "/tmp/{{ gitlab_runner_docker_register_script }}"
+  when:  gitlab_runner_connect_enable and configured_runners.stderr.find("=docker") == -1

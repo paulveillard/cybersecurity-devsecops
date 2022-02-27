@@ -1,0 +1,20 @@
+---
+
+- name: Add gitlab-runner user to Docker group
+  user:
+    name: gitlab-runner
+    groups: docker
+    append: "yes"
+
+- name: Create directory for trusting docker registry
+  file:
+    path: "{{ docker_registry_cert_path }}"
+    state: directory
+
+- name: Copy self-signed public certificate.
+  copy:
+    src: gitlab.local.crt
+    dest: "{{ docker_registry_cert_path }}/ca.crt"
+    owner: root
+    group: root
+    mode: 0644

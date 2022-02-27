@@ -1,0 +1,10 @@
+---
+- hosts: all
+  become: true
+  roles:
+    - ansible-gitlab-runner
+  vars:
+    gitlab_runner_coordinator_url: 'https://gitlab.example.com/ci'
+    gitlab_runner_tags: [ 'docker' ]
+    gitlab_runner_coordinator_cert_path: "./certs/gitlab.example.com.crt"
+    gitlab_runner_registration_token: "1SsdzwmhcfHComLyn3oa"

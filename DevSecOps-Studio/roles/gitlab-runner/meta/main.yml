@@ -1,0 +1,17 @@
+---
+galaxy_info:
+  author: Artemiy Ryabinkov
+  description: Install and register gitlab-runner on remote machine.
+  license: MIT
+  min_ansible_version: 2.2
+  platforms:
+    - name: Ubuntu
+      versions:
+        - trusty
+        - xenial
+        - yakkety
+  galaxy_tags:
+    - gitlab
+    - ci
+
+dependencies: []

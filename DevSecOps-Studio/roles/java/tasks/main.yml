@@ -1,0 +1,25 @@
+---
+- name: Add Ubuntu ppa repo
+  apt_repository:
+    repo=ppa:webupd8team/java
+    state=present
+    update_cache=yes
+
+- name: Add Java PPA
+  apt_repository:
+    repo=ppa:webupd8team/java
+    state=present
+    update_cache=yes
+
+- name: Accept Oracle license
+  debconf: name='oracle-java{{ oracle_java_version }}-installer' question='shared/accepted-oracle-license-v1-1' value='true' vtype='select'
+
+- name: Install Java
+  apt:
+    name="oracle-java{{ oracle_java_version }}-installer"
+    state=present
+
+- name: Set Java version as default
+  apt:
+    name="oracle-java{{ oracle_java_version }}-set-default"
+    state=present
