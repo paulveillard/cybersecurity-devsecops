@@ -2,11 +2,11 @@
 # brew install vagrant
 # VirtualBox 6.1.4
 # VirtualBox Extension Pack 6.1.4
-ansible==2.9.6
+ansible==7.0.0
 cffi==1.14.0
-cryptography==2.9
-Jinja2==2.11.2
+cryptography==39.0.1
+Jinja2==2.11.3
 MarkupSafe==1.1.1
 pycparser==2.20
-PyYAML==5.3.1
+PyYAML==5.4
 six==1.14.0
