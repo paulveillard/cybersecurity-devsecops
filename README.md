@@ -316,14 +316,14 @@ Making DevSecOps discoveries is already hard enough with all the APIs and Comman
 * [ShadowBuster](https://github.com/indeedops/ShadowBuster)
 * [Wazuh](https://wazuh.com/)
 
-## Sharing
+## `Sharing`
 A collection of tools to help with sharing knowledge and telling the story.
 
 * [Gitbook](https://www.gitbook.com)
 * [Speaker Deck](https://speakerdeck.com)
 
 
-## ChatOps
+## `ChatOps`
 One of the greatest changes you can make in your organization is boundaryless communications.  Setting up ChatOps can enable everyone to come together and solve problems.
 
 * [Gitter](https://gitter.im)
@@ -336,7 +336,7 @@ One of the greatest changes you can make in your organization is boundaryless co
 
 **[`^        back to top        ^`](#)**
 
-## License
+## `License`
 MIT License & [cc](https://creativecommons.org/licenses/by/4.0/) license
 
 <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
