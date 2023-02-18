@@ -192,13 +192,13 @@ Books focussed around DevSecOps, bringing the security focus up front.
 #  `Tools `
 This collection of tools are useful in establishing a DevSecOps platform.  We have divided the tools into several categories that help with the different divisions of DevSecOps.
 
-## Dashboards
+## `Dashboards`
 Visualization is an important element of identifying, sharing and evolving the security information that passes from the beginning of the creative process through to operations.
 
 * [Grafana](http://grafana.org/)
 * [Kibana](https://www.elastic.co/products/kibana)
 
-## Automation
+## `Automation`
 Automation platforms have an advantage of providing for scripted remediation when security defects are surfaced.
 
 * [Demisto](https://www.demisto.com/community/)
