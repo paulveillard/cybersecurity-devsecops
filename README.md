@@ -52,6 +52,10 @@ DevSecOps is important for the following key reasons: *speed, and security*
 * This collection has been pulled together and includes: Podcasts, Videos, Presentations, and other Media to help you learn more about DevSecOps, SecDevOps, DevOpsSec, and/or DevOps + Security.
 
 Across the entire software development lifecycle, these are the core stages involved, as well as the security activities required at each stage.
+<p align="center">
+  <img src="https://github.com/paulveillard/cybersecurity-devsecops/blob/main/img/secure-sldc.jpg?raw=true" alt="Sublime's custom image"/>
+</p>
+
 
 ## `Manifesto`
 * [DevSecOps Manifesto](https://www.devsecops.org/)
