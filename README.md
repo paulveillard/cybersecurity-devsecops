@@ -51,6 +51,8 @@ DevSecOps is important for the following key reasons: *speed, and security*
 > “The purpose and intent of DevSecOps is to build on the mindset that everyone is responsible for security with the goal of safely distributing security decisions at speed and scale to those who hold the highest level of context without sacrificing the safety required,” describes Shannon Lietz, co-author of the “DevSecOps Manifesto.”  
 * This collection has been pulled together and includes: Podcasts, Videos, Presentations, and other Media to help you learn more about DevSecOps, SecDevOps, DevOpsSec, and/or DevOps + Security.
 
+
+
 ## `Manifesto`
 * [DevSecOps Manifesto](https://www.devsecops.org/)
 * [Best practices for DevSecOps](https://www.ibm.com/cloud/learn/devsecops#toc-best-pract-yeQPSJ8K)
