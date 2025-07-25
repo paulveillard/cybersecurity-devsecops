@@ -1,4 +1,4 @@
-# DevSecOps = Development + Security + Operations: Theory, Techniques, and Tools
+  # DevSecOps = Development + Security + Operations: Theory, Techniques, and Tools
 An ongoing & curated collection of awesome software best practices and techniques, libraries and frameworks, E-books and videos, websites, blog posts, links to github Repositories, technical guidelines and important resources about DevSecOps in Cybersecurity.
 > Thanks to all contributors, you're awesome and wouldn't be possible without you! Our goal is to build a categorized community-driven collection of very well-known resources.
 
@@ -257,6 +257,7 @@ Testing is an essential element of a DevSecOps program because it helps to prepa
 * [RIPS](http://rips-scanner.sourceforge.net/)
 * [ShiftLeft Scan](https://slscan.io)
 * [Snyk](https://snyk.io)
+* [Vulert](vulert.com)
 * [SourceClear](https://www.sourceclear.com)
 
 **[`^        back to top        ^`](#)**
